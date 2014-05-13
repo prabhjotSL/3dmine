@@ -1,9 +1,13 @@
 var express = require('express'),
+	cors = require('cors'),
 	contacts = require('./routes/contacts');
  
 var app = express();
 
+
+
 app.configure(function () {
+	app.use(cors());
     app.use(express.logger('dev'));     /* 'default', 'short', 'tiny', 'dev' */
     app.use(express.bodyParser());
 });
